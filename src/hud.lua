@@ -17,6 +17,6 @@ surface.CreateFont( "TheDefaultSettings", {
 } )
 
 hook.Add("HUDPaint", "CustomHUD", function(ply)
-    draw.RoundedBox(10, 10, 10, 20, 20, Color(255, 255, 255, 255))
-    draw.SimpleText( "Health", "TheDefaultSettings", 100,100, Color( 255, 255, 255, 255 ))
+    local health = LocalPlayer():Health()
+    draw.RoundedBox(0, 10, 10, 300, 30, Color(255,120,120))
 end)
