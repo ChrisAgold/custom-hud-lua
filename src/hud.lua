@@ -1,7 +1,7 @@
 surface.CreateFont( "TheDefaultSettings", {
     font = "Arial", --  Use the font-name which is shown to you by your operating system Font Viewer, not the file name
     extended = false,
-    size = 40,
+    size = 25,
     weight = 500,
     blursize = 0,
     scanlines = 0,
@@ -17,8 +17,22 @@ surface.CreateFont( "TheDefaultSettings", {
 } )
 
 hook.Add("HUDPaint", "CustomHUD", function(ply)
+    -- HEATH BAR --
     local health = LocalPlayer():Health()
-    draw.RoundedBox(0, 10, 10, 300, 30, Color(255,120,120))
+
+    -- HEALTH BAR OVERLAP: Overlapping box to create health outline: note ScrH() is screen height
+    draw.RoundedBox(0, 8, ScrH() - 100, 300+4, 30 + 4, Color(40,40,40))
+    -- HEALTH BAR: health * 3 is width 100 * 3 = 300 for proper health box dimensions
+    draw.RoundedBox(0, 10, ScrH() - 98, health * 3, 30, Color(255,120,120))
+    -- HEALTH PERCENTAGE:10 + 150  (x,y) draws in center of box above
+    draw.SimpleText(health.. "%","TheDefaultSettings", 10 + 150,10 + 15,Color(255,255,255),1,1)
+
+    -- Armor --
+
+
+    -- AMMO --
+
+
 end)
 
 
@@ -31,6 +45,9 @@ end)
 
 
 -- *****************************************************
+
+-- AMMO TRACKING --
+
 --roundness = 2
 --size = 3
 --
