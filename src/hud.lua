@@ -26,24 +26,7 @@ hook.Add("HUDPaint", "CustomHUD", function(ply)
     draw.RoundedBox(0, 10, ScrH() - 98, health * 3, 30, Color(255,120,120))
     -- HEALTH PERCENTAGE:10 + 150  (x,y) draws in center of box above
     draw.SimpleText(health.. "%","TheDefaultSettings", 10 + 150,10 + 15,Color(255,255,255),1,1)
-
-    -- Armor --
-
-
-    -- AMMO --
-
-
 end)
-
-
-
-
-
-
-
-
-
-
 -- *****************************************************
 
 -- AMMO TRACKING --
